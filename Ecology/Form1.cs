@@ -77,6 +77,32 @@ namespace Ecology
         {
             FillData();
             FillComponentNameComboBox(componentName);
+            componentName.SelectedIndex = 0;
+        }
+
+        private void componentAddButton_Click(object sender, EventArgs e)
+        {
+            double percentSum = 0;
+            foreach (DataGridViewRow compositionDataRow in compositionData.Rows)
+            {
+                DataGridViewCell cell = compositionDataRow.Cells[1];
+                double compositionPercent = double.Parse(cell.Value.ToString());
+                percentSum += compositionPercent;
+            }
+
+            percentSum += (double)componentNamePercent.Value;
+            if (percentSum > 100)
+            {
+                MessageBox.Show("Сумма состава больше 100%",
+                    "Ошибка!",
+                    MessageBoxButtons.OK,
+                    MessageBoxIcon.Error);
+            }
+            else
+            {
+                compositionData.Rows.Add(componentName.Text, 
+                    componentNamePercent.Value);
+            }
         }
     }
 
