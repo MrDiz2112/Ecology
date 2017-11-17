@@ -179,7 +179,7 @@
             this.numericUpDown9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown9.Location = new System.Drawing.Point(359, 225);
             this.numericUpDown9.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -192,7 +192,7 @@
             this.numericUpDown8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown8.Location = new System.Drawing.Point(359, 199);
             this.numericUpDown8.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -205,7 +205,7 @@
             this.numericUpDown7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown7.Location = new System.Drawing.Point(359, 173);
             this.numericUpDown7.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -218,7 +218,7 @@
             this.numericUpDown6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown6.Location = new System.Drawing.Point(359, 147);
             this.numericUpDown6.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -231,7 +231,7 @@
             this.numericUpDown5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown5.Location = new System.Drawing.Point(359, 121);
             this.numericUpDown5.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -244,7 +244,7 @@
             this.numericUpDown4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown4.Location = new System.Drawing.Point(359, 95);
             this.numericUpDown4.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -267,7 +267,7 @@
             this.numericUpDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown3.Location = new System.Drawing.Point(359, 43);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -291,7 +291,7 @@
             this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown2.Location = new System.Drawing.Point(359, 69);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -314,7 +314,7 @@
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.Location = new System.Drawing.Point(359, 17);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            10000,
+            4,
             0,
             0,
             0});
@@ -346,19 +346,9 @@
             // unknownComponentPercent
             // 
             this.unknownComponentPercent.Location = new System.Drawing.Point(96, 312);
-            this.unknownComponentPercent.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.unknownComponentPercent.Name = "unknownComponentPercent";
             this.unknownComponentPercent.Size = new System.Drawing.Size(55, 20);
             this.unknownComponentPercent.TabIndex = 22;
-            this.unknownComponentPercent.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // label17
             // 

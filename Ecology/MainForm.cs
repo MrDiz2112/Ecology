@@ -161,7 +161,46 @@ namespace Ecology
         // рассчитать
         private void calculateButton_Click(object sender, EventArgs e)
         {
-            
+            double sumK = 0;
+            double mass = (double)massNumeric.Value;
+
+            int hazardClass = 0;
+
+            foreach (DataGridViewRow item in compositionData.Rows)
+            {
+                double itemPercent = Double.Parse(item.Cells[1].Value.ToString());
+                double itemW = (double)item.Cells[2].Value;
+
+                double newC = (itemPercent/10 * 1000000) / mass;
+                double newK = newC / itemW;
+                sumK += newK;
+            }
+
+            if (sumK == 1.0)
+            {
+                hazardClass = 5;
+            }
+            if (sumK > 1.0 && sumK <= 100)
+            {
+                hazardClass = 4;
+            }
+            if (sumK > 100 && sumK <= 1000)
+            {
+                hazardClass = 3;
+            }
+            if (sumK > 1000 && sumK <= 10000)
+            {
+                hazardClass = 2;
+            }
+            if (sumK > 10000)
+            {
+                hazardClass = 1;
+            }
+
+            MessageBox.Show("K = " + sumK.ToString() + "\r\nКласс опасности: " + hazardClass.ToString(),
+                "Класс опасности",
+                MessageBoxButtons.OK,
+                MessageBoxIcon.Information);
         }
     }
 

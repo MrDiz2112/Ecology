@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.massGroup = new System.Windows.Forms.GroupBox();
             this.massLabel = new System.Windows.Forms.Label();
@@ -43,10 +43,10 @@
             this.componentName = new System.Windows.Forms.ComboBox();
             this.componentNameLabel = new System.Windows.Forms.Label();
             this.compositionData = new System.Windows.Forms.DataGridView();
-            this.calculateButton = new System.Windows.Forms.Button();
             this.tableComponentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableComponentPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.compW = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.calculateButton = new System.Windows.Forms.Button();
             this.massGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.massNumeric)).BeginInit();
             this.compositionGroup.SuspendLayout();
@@ -93,10 +93,21 @@
             // 
             // massNumeric
             // 
+            this.massNumeric.DecimalPlaces = 2;
             this.massNumeric.Location = new System.Drawing.Point(6, 19);
+            this.massNumeric.Maximum = new decimal(new int[] {
+            100000,
+            0,
+            0,
+            0});
             this.massNumeric.Name = "massNumeric";
             this.massNumeric.Size = new System.Drawing.Size(120, 20);
             this.massNumeric.TabIndex = 0;
+            this.massNumeric.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // compositionGroup
             // 
@@ -168,19 +179,9 @@
             // 
             this.componentNamePercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.componentNamePercent.Location = new System.Drawing.Point(201, 215);
-            this.componentNamePercent.Minimum = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             this.componentNamePercent.Name = "componentNamePercent";
             this.componentNamePercent.Size = new System.Drawing.Size(50, 20);
             this.componentNamePercent.TabIndex = 3;
-            this.componentNamePercent.Value = new decimal(new int[] {
-            1,
-            0,
-            0,
-            0});
             // 
             // componentName
             // 
@@ -227,18 +228,6 @@
             this.compositionData.Size = new System.Drawing.Size(326, 148);
             this.compositionData.TabIndex = 0;
             // 
-            // calculateButton
-            // 
-            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.calculateButton.Location = new System.Drawing.Point(122, 376);
-            this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(121, 23);
-            this.calculateButton.TabIndex = 3;
-            this.calculateButton.Text = "Рассчитать";
-            this.calculateButton.UseVisualStyleBackColor = true;
-            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
-            // 
             // tableComponentName
             // 
             this.tableComponentName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -250,9 +239,9 @@
             // tableComponentPercent
             // 
             this.tableComponentPercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = null;
-            this.tableComponentPercent.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = null;
+            this.tableComponentPercent.DefaultCellStyle = dataGridViewCellStyle7;
             this.tableComponentPercent.HeaderText = "Процент";
             this.tableComponentPercent.MaxInputLength = 100;
             this.tableComponentPercent.Name = "tableComponentPercent";
@@ -262,14 +251,26 @@
             // compW
             // 
             this.compW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "N2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.compW.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle8.Format = "N2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.compW.DefaultCellStyle = dataGridViewCellStyle8;
             this.compW.HeaderText = "W";
             this.compW.Name = "compW";
             this.compW.ReadOnly = true;
             this.compW.Width = 43;
+            // 
+            // calculateButton
+            // 
+            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.calculateButton.Location = new System.Drawing.Point(122, 376);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(121, 23);
+            this.calculateButton.TabIndex = 3;
+            this.calculateButton.Text = "Рассчитать";
+            this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // MainForm
             // 

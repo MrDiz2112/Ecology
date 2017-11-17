@@ -42,6 +42,8 @@ namespace Ecology
                     newComponentW);
 
                 _mainForm.CheckIsCanDelete();
+                defaulComponentName.Text = "";
+                defaulComponentPercent.Value = 0;
             }
         }
 
@@ -99,6 +101,16 @@ namespace Ecology
                     newW);
 
                 _mainForm.CheckIsCanDelete();
+                unknownComponentName.Text = "";
+                unknownComponentPercent.Value = 0;
+
+                foreach (Control c in pointsGroup.Controls)
+                {
+                    if (c.GetType() == typeof(NumericUpDown))
+                    {
+                        c.Text = "0";
+                    }
+                }
             }
         }
     }
