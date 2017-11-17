@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.titleLabel = new System.Windows.Forms.Label();
             this.massGroup = new System.Windows.Forms.GroupBox();
             this.massLabel = new System.Windows.Forms.Label();
@@ -42,9 +43,10 @@
             this.componentName = new System.Windows.Forms.ComboBox();
             this.componentNameLabel = new System.Windows.Forms.Label();
             this.compositionData = new System.Windows.Forms.DataGridView();
+            this.calculateButton = new System.Windows.Forms.Button();
             this.tableComponentName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tableComponentPercent = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.calculateButton = new System.Windows.Forms.Button();
+            this.compW = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.massGroup.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.massNumeric)).BeginInit();
             this.compositionGroup.SuspendLayout();
@@ -74,7 +76,7 @@
             this.massGroup.Controls.Add(this.massNumeric);
             this.massGroup.Location = new System.Drawing.Point(12, 30);
             this.massGroup.Name = "massGroup";
-            this.massGroup.Size = new System.Drawing.Size(292, 57);
+            this.massGroup.Size = new System.Drawing.Size(338, 57);
             this.massGroup.TabIndex = 1;
             this.massGroup.TabStop = false;
             this.massGroup.Text = "Масса отхода";
@@ -111,20 +113,23 @@
             this.compositionGroup.Controls.Add(this.compositionData);
             this.compositionGroup.Location = new System.Drawing.Point(12, 93);
             this.compositionGroup.Name = "compositionGroup";
-            this.compositionGroup.Size = new System.Drawing.Size(292, 277);
+            this.compositionGroup.Size = new System.Drawing.Size(338, 277);
             this.compositionGroup.TabIndex = 2;
             this.compositionGroup.TabStop = false;
             this.compositionGroup.Text = "Состав";
             // 
             // deleteComponentButton
             // 
+            this.deleteComponentButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.deleteComponentButton.Enabled = false;
             this.deleteComponentButton.Location = new System.Drawing.Point(7, 173);
             this.deleteComponentButton.Name = "deleteComponentButton";
-            this.deleteComponentButton.Size = new System.Drawing.Size(279, 23);
+            this.deleteComponentButton.Size = new System.Drawing.Size(325, 23);
             this.deleteComponentButton.TabIndex = 7;
             this.deleteComponentButton.Text = "Удалить выбранный компонент";
             this.deleteComponentButton.UseVisualStyleBackColor = true;
+            this.deleteComponentButton.Click += new System.EventHandler(this.deleteComponentButton_Click);
             // 
             // newComponent
             // 
@@ -132,16 +137,16 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.newComponent.Location = new System.Drawing.Point(6, 248);
             this.newComponent.Name = "newComponent";
-            this.newComponent.Size = new System.Drawing.Size(280, 23);
+            this.newComponent.Size = new System.Drawing.Size(326, 23);
             this.newComponent.TabIndex = 6;
             this.newComponent.Text = "Добавить отсутствующий компонент";
             this.newComponent.UseVisualStyleBackColor = true;
+            this.newComponent.Click += new System.EventHandler(this.newComponent_Click);
             // 
             // componentAddButton
             // 
-            this.componentAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.componentAddButton.Location = new System.Drawing.Point(211, 213);
+            this.componentAddButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.componentAddButton.Location = new System.Drawing.Point(257, 213);
             this.componentAddButton.Name = "componentAddButton";
             this.componentAddButton.Size = new System.Drawing.Size(75, 23);
             this.componentAddButton.TabIndex = 5;
@@ -151,10 +156,9 @@
             // 
             // componentNamePercentLabel
             // 
-            this.componentNamePercentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
+            this.componentNamePercentLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.componentNamePercentLabel.AutoSize = true;
-            this.componentNamePercentLabel.Location = new System.Drawing.Point(152, 199);
+            this.componentNamePercentLabel.Location = new System.Drawing.Point(198, 199);
             this.componentNamePercentLabel.Name = "componentNamePercentLabel";
             this.componentNamePercentLabel.Size = new System.Drawing.Size(15, 13);
             this.componentNamePercentLabel.TabIndex = 4;
@@ -162,12 +166,21 @@
             // 
             // componentNamePercent
             // 
-            this.componentNamePercent.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.componentNamePercent.Location = new System.Drawing.Point(155, 215);
+            this.componentNamePercent.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.componentNamePercent.Location = new System.Drawing.Point(201, 215);
+            this.componentNamePercent.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.componentNamePercent.Name = "componentNamePercent";
             this.componentNamePercent.Size = new System.Drawing.Size(50, 20);
             this.componentNamePercent.TabIndex = 3;
+            this.componentNamePercent.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // componentName
             // 
@@ -177,7 +190,7 @@
             this.componentName.FormattingEnabled = true;
             this.componentName.Location = new System.Drawing.Point(6, 213);
             this.componentName.Name = "componentName";
-            this.componentName.Size = new System.Drawing.Size(142, 21);
+            this.componentName.Size = new System.Drawing.Size(188, 21);
             this.componentName.TabIndex = 2;
             // 
             // componentNameLabel
@@ -194,20 +207,37 @@
             // compositionData
             // 
             this.compositionData.AllowUserToAddRows = false;
+            this.compositionData.AllowUserToDeleteRows = false;
+            this.compositionData.AllowUserToResizeColumns = false;
+            this.compositionData.AllowUserToResizeRows = false;
             this.compositionData.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.compositionData.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.compositionData.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.tableComponentName,
-            this.tableComponentPercent});
+            this.tableComponentPercent,
+            this.compW});
             this.compositionData.Location = new System.Drawing.Point(6, 19);
             this.compositionData.MultiSelect = false;
             this.compositionData.Name = "compositionData";
             this.compositionData.ReadOnly = true;
             this.compositionData.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.compositionData.RowHeadersVisible = false;
-            this.compositionData.Size = new System.Drawing.Size(280, 148);
+            this.compositionData.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.compositionData.Size = new System.Drawing.Size(326, 148);
             this.compositionData.TabIndex = 0;
+            // 
+            // calculateButton
+            // 
+            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.calculateButton.Location = new System.Drawing.Point(122, 376);
+            this.calculateButton.Name = "calculateButton";
+            this.calculateButton.Size = new System.Drawing.Size(121, 23);
+            this.calculateButton.TabIndex = 3;
+            this.calculateButton.Text = "Рассчитать";
+            this.calculateButton.UseVisualStyleBackColor = true;
+            this.calculateButton.Click += new System.EventHandler(this.calculateButton_Click);
             // 
             // tableComponentName
             // 
@@ -221,7 +251,6 @@
             // 
             this.tableComponentPercent.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.ColumnHeader;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "#\\%";
             dataGridViewCellStyle1.NullValue = null;
             this.tableComponentPercent.DefaultCellStyle = dataGridViewCellStyle1;
             this.tableComponentPercent.HeaderText = "Процент";
@@ -230,22 +259,23 @@
             this.tableComponentPercent.ReadOnly = true;
             this.tableComponentPercent.Width = 75;
             // 
-            // calculateButton
+            // compW
             // 
-            this.calculateButton.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.calculateButton.Location = new System.Drawing.Point(122, 376);
-            this.calculateButton.Name = "calculateButton";
-            this.calculateButton.Size = new System.Drawing.Size(75, 23);
-            this.calculateButton.TabIndex = 3;
-            this.calculateButton.Text = "Рассчитать";
-            this.calculateButton.UseVisualStyleBackColor = true;
+            this.compW.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "N2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.compW.DefaultCellStyle = dataGridViewCellStyle2;
+            this.compW.HeaderText = "W";
+            this.compW.Name = "compW";
+            this.compW.ReadOnly = true;
+            this.compW.Width = 43;
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(316, 406);
+            this.ClientSize = new System.Drawing.Size(362, 406);
             this.Controls.Add(this.calculateButton);
             this.Controls.Add(this.compositionGroup);
             this.Controls.Add(this.massGroup);
@@ -275,7 +305,7 @@
         private System.Windows.Forms.NumericUpDown massNumeric;
         private System.Windows.Forms.Label massLabel;
         private System.Windows.Forms.GroupBox compositionGroup;
-        private System.Windows.Forms.DataGridView compositionData;
+        public System.Windows.Forms.DataGridView compositionData;
         private System.Windows.Forms.Button componentAddButton;
         private System.Windows.Forms.Label componentNamePercentLabel;
         private System.Windows.Forms.NumericUpDown componentNamePercent;
@@ -283,9 +313,10 @@
         private System.Windows.Forms.Label componentNameLabel;
         private System.Windows.Forms.Button newComponent;
         private System.Windows.Forms.Button calculateButton;
+        private System.Windows.Forms.Button deleteComponentButton;
         private System.Windows.Forms.DataGridViewTextBoxColumn tableComponentName;
         private System.Windows.Forms.DataGridViewTextBoxColumn tableComponentPercent;
-        private System.Windows.Forms.Button deleteComponentButton;
+        private System.Windows.Forms.DataGridViewTextBoxColumn compW;
     }
 }
 

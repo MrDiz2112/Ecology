@@ -80,7 +80,8 @@ namespace Ecology
             componentName.SelectedIndex = 0;
         }
 
-        private void componentAddButton_Click(object sender, EventArgs e)
+        // проверка больше ли сумма процентов 100%
+        public bool CheckPercentSum(double newPercent)
         {
             double percentSum = 0;
             foreach (DataGridViewRow compositionDataRow in compositionData.Rows)
@@ -90,8 +91,29 @@ namespace Ecology
                 percentSum += compositionPercent;
             }
 
-            percentSum += (double)componentNamePercent.Value;
+            percentSum += newPercent;
             if (percentSum > 100)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        // проверить, если ли что удалять из состава
+        public void CheckIsCanDelete()
+        {
+            int componentsCount = compositionData.RowCount;
+
+            deleteComponentButton.Enabled = componentsCount > 0;
+        }
+
+        private void componentAddButton_Click(object sender, EventArgs e)
+        {
+            double new_Percent = (double)componentNamePercent.Value;
+            bool isHigher = CheckPercentSum(new_Percent);
+
+            if (isHigher)
             {
                 MessageBox.Show("Сумма состава больше 100%",
                     "Ошибка!",
@@ -100,9 +122,46 @@ namespace Ecology
             }
             else
             {
+                double new_W = 0;
+
+                foreach (Component item in componentsData)
+                {
+                    if (item.name == componentName.Text)
+                    {
+                        new_W = item.W;
+                        break;
+                    }
+                }
+
                 compositionData.Rows.Add(componentName.Text, 
-                    componentNamePercent.Value);
+                    componentNamePercent.Value, new_W);
+
+                CheckIsCanDelete();
             }
+        }
+
+        // вызвать форму для нового компонента
+        private void newComponent_Click(object sender, EventArgs e)
+        {
+            NewComponent newComponentForm = new NewComponent(this);
+            newComponentForm.Show();
+        }
+
+        // удалить выбранный компонент
+        private void deleteComponentButton_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow item in compositionData.SelectedRows)
+            {
+                compositionData.Rows.RemoveAt(item.Index);
+            }
+
+            CheckIsCanDelete();
+        }
+
+        // рассчитать
+        private void calculateButton_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 
