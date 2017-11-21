@@ -150,9 +150,9 @@
             this.label14.Location = new System.Drawing.Point(6, 170);
             this.label14.Name = "label14";
             this.label14.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label14.Size = new System.Drawing.Size(61, 23);
+            this.label14.Size = new System.Drawing.Size(67, 23);
             this.label14.TabIndex = 36;
-            this.label14.Text = "lg(S, ПДК):";
+            this.label14.Text = "lg(S, ПДКв):";
             // 
             // label13
             // 
@@ -160,9 +160,9 @@
             this.label13.Location = new System.Drawing.Point(6, 144);
             this.label13.Name = "label13";
             this.label13.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label13.Size = new System.Drawing.Size(29, 23);
+            this.label13.Size = new System.Drawing.Size(35, 23);
             this.label13.TabIndex = 35;
-            this.label13.Text = "LC..:";
+            this.label13.Text = "LC50:";
             // 
             // label12
             // 
@@ -170,16 +170,16 @@
             this.label12.Location = new System.Drawing.Point(6, 118);
             this.label12.Name = "label12";
             this.label12.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label12.Size = new System.Drawing.Size(30, 23);
+            this.label12.Size = new System.Drawing.Size(36, 23);
             this.label12.TabIndex = 34;
-            this.label12.Text = "LD..:";
+            this.label12.Text = "LD50:";
             // 
             // numericUpDown9
             // 
             this.numericUpDown9.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown9.Location = new System.Drawing.Point(359, 225);
             this.numericUpDown9.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -192,7 +192,7 @@
             this.numericUpDown8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown8.Location = new System.Drawing.Point(359, 199);
             this.numericUpDown8.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -205,7 +205,7 @@
             this.numericUpDown7.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown7.Location = new System.Drawing.Point(359, 173);
             this.numericUpDown7.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -218,7 +218,7 @@
             this.numericUpDown6.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown6.Location = new System.Drawing.Point(359, 147);
             this.numericUpDown6.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -231,7 +231,7 @@
             this.numericUpDown5.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown5.Location = new System.Drawing.Point(359, 121);
             this.numericUpDown5.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -244,7 +244,7 @@
             this.numericUpDown4.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown4.Location = new System.Drawing.Point(359, 95);
             this.numericUpDown4.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -267,7 +267,7 @@
             this.numericUpDown3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown3.Location = new System.Drawing.Point(359, 43);
             this.numericUpDown3.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -291,7 +291,7 @@
             this.numericUpDown2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown2.Location = new System.Drawing.Point(359, 69);
             this.numericUpDown2.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -305,16 +305,16 @@
             this.label9.Location = new System.Drawing.Point(6, 66);
             this.label9.Name = "label9";
             this.label9.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label9.Size = new System.Drawing.Size(103, 23);
+            this.label9.Size = new System.Drawing.Size(141, 23);
             this.label9.TabIndex = 23;
-            this.label9.Text = "ПДК (ПДК, ОБУВ):";
+            this.label9.Text = "ПДКс.с. (ПДКм.р., ОБУВ):";
             // 
             // numericUpDown1
             // 
             this.numericUpDown1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.numericUpDown1.Location = new System.Drawing.Point(359, 17);
             this.numericUpDown1.Maximum = new decimal(new int[] {
-            4,
+            10000,
             0,
             0,
             0});
@@ -328,9 +328,9 @@
             this.label8.Location = new System.Drawing.Point(6, 14);
             this.label8.Name = "label8";
             this.label8.Padding = new System.Windows.Forms.Padding(0, 5, 0, 5);
-            this.label8.Size = new System.Drawing.Size(104, 23);
+            this.label8.Size = new System.Drawing.Size(110, 23);
             this.label8.TabIndex = 21;
-            this.label8.Text = "ПДК (ОДУ, ОБУВ):";
+            this.label8.Text = "ПДКв (ОДУ, ОБУВ):";
             // 
             // addUnknownComponentButton
             // 
@@ -475,6 +475,7 @@
             this.Controls.Add(this.unknownGroup);
             this.Controls.Add(this.defaultGroup);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "NewComponent";

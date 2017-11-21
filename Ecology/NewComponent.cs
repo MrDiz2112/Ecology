@@ -41,6 +41,10 @@ namespace Ecology
                     newComponentPercent, 
                     newComponentW);
 
+                XmlFile xmlFile = new XmlFile();
+                xmlFile.AddComponent(newComponentName, newComponentW);
+                MainForm.FillComponentNameComboBox(_mainForm.componentName);
+
                 _mainForm.CheckIsCanDelete();
                 defaulComponentName.Text = "";
                 defaulComponentPercent.Value = 0;
@@ -100,9 +104,21 @@ namespace Ecology
                     newPercent,
                     newW);
 
+                XmlFile xmlFile = new XmlFile();
+                xmlFile.AddComponent(newComponentName, newW);
+                MainForm.FillComponentNameComboBox(_mainForm.componentName);
+
                 _mainForm.CheckIsCanDelete();
                 unknownComponentName.Text = "";
                 unknownComponentPercent.Value = 0;
+
+                MessageBox.Show("X: " + newX + "\r\n" +
+                                "Z: " + newZ + "\r\n" +
+                                "lg(W): " + newLgW + "\r\n" +
+                                "W: " + newW, 
+                                "Результаты вычислений",
+                                MessageBoxButtons.OK,
+                                MessageBoxIcon.None);
 
                 foreach (Control c in pointsGroup.Controls)
                 {
