@@ -12,3 +12,4 @@
 * Результат расчетов
 
 ![Imgur](https://i.imgur.com/ukGzXn2.png)
+![Imgur](https://i.imgur.com/LeB0oCD.png)
